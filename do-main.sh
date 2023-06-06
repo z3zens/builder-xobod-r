@@ -13,7 +13,7 @@ CUSCLANGVER=""
 CUSLLDVER=""
 CUSMSGWORD=""
 TypeBuild="RELEASE"
-BuilderKernel="trb"
+BuilderKernel="z3zhain"
 
 if [ "$KranulVer" = "419" ];then
 CAFTAG="04900"

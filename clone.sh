@@ -77,9 +77,17 @@ elif [ "$BuilderKernel" == "zyc" ];then
 	TypePrint="ZyC"
 	export LD=ld.lld
 	export LD_LIBRARY_PATH=$clangDir/lib
+elif [ "$BuilderKernel" == "z3zhain" ];then
+    getInfo ">> Cloning z3zhain clang 16 . . . <<"
+    git clone https://gitlab.com/z3zens/clang-toolchains -b main $clangDir --depth=1
+	Compiler="z3zhain clang"
+	TypeBuilder="z3zhain"
+	TypePrint="z3zhain"
+	export LD=ld.lld
+    export LD_LIBRARY_PATH=$clangDir/lib
 elif [ "$BuilderKernel" == "neutron" ];then
-    getInfo ">> Cloning Neutron clang 16 . . . <<"
-    git clone https://gitlab.com/RyuujiX/neutron-clang -b Neutron-16 $clangDir --depth=1
+    getInfo ">> Cloning Neutron clang 17 . . . <<"
+    git clone https://gitlab.com/z3zens/neutron-clang -b main $clangDir --depth=1
 	Compiler="Neutron Clang"
 	TypeBuilder="Neutron"
 	TypePrint="Neutron"
