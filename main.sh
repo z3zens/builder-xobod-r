@@ -188,21 +188,16 @@ CompileKernel(){
 	getInfo ">> Compiling kernel . . . . <<"
     [[ "$(pwd)" != "${kernelDir}" ]] && cd "${kernelDir}"
 	GetKernelInfo
-	if [ ! -z "$CAFTAG" ];then
-		TAGKENEL="$SetTag-$CAFTAG-$SetLastTag"
-	else
-		TAGKENEL="$(git log | grep "${SetTag}" | head -n 1 | awk -F '\\'${SetLastTag}'' '{print $1"'${SetLastTag}'"}' | awk -F '\\'${SetTag}'' '{print "'${SetTag}'"$2}')"
-    fi
 	if [ "$KranulVer" = "419" ];then
 		ClangMoreStrings="AR=llvm-ar NM=llvm-nm AS=llvm-as STRIP=llvm-strip OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump READELF=llvm-readelf HOSTAR=llvm-ar HOSTAS=llvm-as LD_LIBRARY_PATH=$clangDir/lib LD=ld.lld HOSTLD=ld.lld"
-		export KBUILD_BUILD_HOST="$TAGKENEL"
+		export KBUILD_BUILD_HOST="z3zprjkt"
 		export LLVM=1
 		export LLVM_IAS=1
 		FirstMsgTag="#$PARTITION"
 		FourthMsgTag=""
 		ThirdMsgTag=""
 	elif [ "$KranulVer" = "44" ];then
-        export KBUILD_BUILD_HOST="$Driver-$TAGKENEL"
+        export KBUILD_BUILD_HOST="z3zprjkt"
 		FourthMsgTag="#$Driver"
 		FirstMsgTag="#$TypeBuildTag"
 		ThirdMsgTag="#$CpuFreq"
@@ -639,10 +634,10 @@ else
 AKbranch="4.4-hmp"
 TypeBuildTag="HMP"
 fi
-KranulLink="android_kernel_asus_sdm660"
+KranulLink="kernel_msm-4.4"
 elif [ "$KranulVer" = "419" ];then
 AKbranch="4.19-std"
-KranulLink="android_kernel_asus_sdm660-4.19"
+KranulLink="kernel_msm-4.19"
 TypeBuildTag=""
 fi
 
@@ -707,12 +702,7 @@ fi
 	DEVICE="Asus Max Pro M2"
 	DEFCONFIG="X01BD_defconfig"
 	fi
-	if [ "$KranulVer" = "44" ];then
-	SetTag="LA.UM.9.2.r1"
-    SetLastTag="SDMxx0.0"
-	elif [ "$KranulVer" = "419" ];then
-	SetTag="LA.UM.10.2.1.r1"
-    SetLastTag="sdm660.0"
+	if [ "$KranulVer" = "419" ];then
 	DEFCONFIG="asus/$DEFCONFIG"
 	fi
 	DEFCONFIGPATH="arch/$ARCH/configs"
