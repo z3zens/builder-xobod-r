@@ -1,4 +1,4 @@
-name: z3zens Build
+name: RyuujiX Build
 
 env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
@@ -7,7 +7,7 @@ env:
       GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
       SDCLANGPASS: ${{ secrets.SDCLANGPASS }}
       GDRIVEKEYPASS: ${{ secrets.GDRIVEKEYPASS }}
-      
+
 on: [push]
 
 jobs:

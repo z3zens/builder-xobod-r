@@ -108,7 +108,7 @@ if [ "$BuilderKernel" == "gcc" ] || [ "$gcc" == "Y" ];then
 	TypeBuilder="GCC"
 	TypePrint="GCC"
 	elif [ ! -z "CUSCLANGVER" ];then
-	CUSCLANGVER="$CUSCLANGVER X GCC 4.9"
+	CUSCLANGVER="$CUSCLANGVER"
 	fi
 elif [ "$BuilderKernel" == "gcc12" ] || [ "$gcc12" == "Y" ];then
 	[[ "$(pwd)" != "${mainDir}" ]] && cd "${mainDir}"
@@ -138,7 +138,7 @@ elif [ "$BuilderKernel" == "gcc12" ] || [ "$gcc12" == "Y" ];then
 		TypeBuilder="ZyC GCC"
 		TypePrint="ZyC GCC"
 	elif [ ! -z "CUSCLANGVER" ];then
-	CUSCLANGVER="$CUSCLANGVER X ZyC GCC 12"
+	CUSCLANGVER="$CUSCLANGVER"
 	fi
 elif [ "$gcc10" == "Y" ];then
 	getInfo ">> cloning gcc64 10.2.0 . . . <<"
@@ -148,7 +148,7 @@ elif [ "$gcc10" == "Y" ];then
 	for64=aarch64-linux-gnu
 	for32=arm-linux-gnueabi
 	if [ ! -z "CUSCLANGVER" ];then
-		CUSCLANGVER="$CUSCLANGVER X GCC 10"
+		CUSCLANGVER="$CUSCLANGVER"
 	fi
 else
 	gcc64Dir=$clangDir

@@ -1,9 +1,9 @@
 #! /bin/bash
 KranulVer="419"
-branch="r2/s"
+branch="test"
 CODENAME="X01BD"
 WithSpec="Y"
-PrivBuild="N"
+PrivBuild="Y"
 PureKernel="N"
 CUSKERNAME="" # Add "DCKN" on ResetBranch if u don't want Kernel Name Changed again
 CUSKERLINK=""
@@ -13,7 +13,7 @@ CUSCLANGVER=""
 CUSLLDVER=""
 CUSMSGWORD=""
 TypeBuild="RELEASE"
-BuilderKernel="00000"
+BuilderKernel="trb"
 
 if [ "$KranulVer" = "419" ];then
 CAFTAG="04900"

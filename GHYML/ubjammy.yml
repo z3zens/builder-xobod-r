@@ -1,4 +1,4 @@
-name: RyuujiX Build
+name: z3zens Build
 
 env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
